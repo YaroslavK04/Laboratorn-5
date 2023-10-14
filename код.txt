@@ -14,33 +14,33 @@ void output(int size) {
 	for (int i = 0; i < size; i++) {
 		cout << i + 1 << " - " << connect_graf[i];
 		if (connect_graf[i] == size - 1) {
-			cout << "- доминирующий ";
+			cout << "- РґРѕРјРёРЅРёСЂСѓСЋС‰РёР№ ";
 			schet++;
 		}
 		if (connect_graf[i] == 1) {
-			cout << "- концевой ";
+			cout << "- РєРѕРЅС†РµРІРѕР№ ";
 			schet1++;
 		}
 		if (connect_graf[i] == 0) {
-			cout << "- изолированный ";
+			cout << "- РёР·РѕР»РёСЂРѕРІР°РЅРЅС‹Р№ ";
 			schet2++;
 		}
 		cout << "\n";
 		
 	}
 
-	if (schet == 0) { cout << "Доминирующих нет\n"; }
-	if (schet1 == 0) { cout << "Концевых нет\n"; }
-	if (schet2 == 0) { cout << "Изолированных нет\n"; }
+	if (schet == 0) { cout << "Р”РѕРјРёРЅРёСЂСѓСЋС‰РёС… РЅРµС‚\n"; }
+	if (schet1 == 0) { cout << "РљРѕРЅС†РµРІС‹С… РЅРµС‚\n"; }
+	if (schet2 == 0) { cout << "РР·РѕР»РёСЂРѕРІР°РЅРЅС‹С… РЅРµС‚\n"; }
 }
 
 int main() {
 	setlocale(LC_ALL, "Rus");
 	srand(time(NULL));
 	int** G,**G_inc, size, size_graf = 0, rebro = 0, size_graf_inc = 0;
-	cout << " Матрица смежности \n \n Введите количество вершин графа: ";
+	cout << " РњР°С‚СЂРёС†Р° СЃРјРµР¶РЅРѕСЃС‚Рё \n \n Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РІРµСЂС€РёРЅ РіСЂР°С„Р°: ";
 	cin >> size;
-	G = new int* [size]; // создаём двумерный массив 
+	G = new int* [size]; // СЃРѕР·РґР°С‘Рј РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ 
 	connect_graf = new int[size];
 	for (int i = 0; i < size; i++) {
 		G[i] = new int[size];
@@ -68,12 +68,12 @@ int main() {
 		cout << "\n";
 	}
 
-	cout << "\n Размер графа = " << size_graf << "\n\n";
+	cout << "\n Р Р°Р·РјРµСЂ РіСЂР°С„Р° = " << size_graf << "\n\n";
 	
 	output(size);
 
-	cout << "\nМатрица инцидентности\n" << endl;
-	G_inc = new int* [size]; // создаём двумерный массив 
+	cout << "\nРњР°С‚СЂРёС†Р° РёРЅС†РёРґРµРЅС‚РЅРѕСЃС‚Рё\n" << endl;
+	G_inc = new int* [size]; // СЃРѕР·РґР°С‘Рј РґРІСѓРјРµСЂРЅС‹Р№ РјР°СЃСЃРёРІ 
 	for (int i = 0; i < size; i++) {
 		G_inc[i] = new int[size_graf];
 	}
@@ -99,7 +99,7 @@ int main() {
 		}
 		cout << "\n";
 	}
-	cout << "\n Размер графа = " << size_graf_inc << "\n\n";
+	cout << "\n Р Р°Р·РјРµСЂ РіСЂР°С„Р° = " << size_graf_inc << "\n\n";
 
 	for (int i = 0; i < size; i++) {
 		connect_graf[i] = 0;
